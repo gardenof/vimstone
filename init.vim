@@ -81,6 +81,9 @@ Plug 'dyng/ctrlsf.vim', { 'commit': '50186c5' }
 
 Plug 'mbbill/undotree', { 'commit': '6fa6b57' }
 
+" Allowing you to move seamlessly between Vim panes and tmux splits.
+Plug 'christoomey/vim-tmux-navigator', { 'comit': 'cdd66d6' }
+
 call plug#end()
 
 if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
