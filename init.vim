@@ -214,17 +214,6 @@ EOF
 
 " BEGIN lsp related config
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-set updatetime=300
-
 lua <<EOF
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -703,3 +692,5 @@ augroup Git
   au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 augroup END
 
+set signcolumn=yes
+set updatetime=100
