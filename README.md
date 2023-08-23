@@ -1,3 +1,11 @@
+# Fork of Flipstone VimStone
+
+## Changes
+- Removed Go-Lang langue server.
+- Added Vim Tmux Navigator plugin.
+- Added vim-gitgutter.
+- Have neo-tree show hidden files as default.
+
 # vimstone
 
 An unassuming Neovim distribution used by Flipstone and friends
