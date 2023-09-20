@@ -33,6 +33,9 @@ Plug 'neovimhaskell/haskell-vim', { 'commit': 'f35d022' }
 
 Plug 'purescript-contrib/purescript-vim', { 'commit': '8234835' }
 
+" Comment out the Go-Lang langue server. I could never make it work.
+" Plug 'fatih/vim-go', { 'commit': '7ec0a19' }
+
 Plug 'ElmCast/elm-vim', { 'commit': '4b71fac' }
 
 Plug 'vmchale/dhall-vim', { 'commit': 'bd9fd99' }
