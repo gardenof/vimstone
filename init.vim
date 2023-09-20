@@ -13,7 +13,7 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'nvim-neo-tree/neo-tree.nvim', { 'commit': 'v2.42' }
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v3.x', 'tag': '3.6' }
 
 " BEGIN neo-tree dependencies
 "
