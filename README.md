@@ -1,10 +1,14 @@
 # Fork of Flipstone VimStone
 
+## Warning
+- This is a test branch.
+- It will be force-pushed over.
+
 ## Changes
-- Removed Go-Lang langue server.
-- Added Vim Tmux Navigator plugin.
-- Added vim-gitgutter.
 - Have neo-tree show hidden files as default.
+- Added vim-gitgutter.
+- Added Vim Tmux Navigator plugin.
+- Removed Go-Lang langue server.
 
 # vimstone
 
