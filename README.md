@@ -5,6 +5,7 @@
 - It will be force-pushed over.
 
 ## Changes
+- Update nvim-neo-tree/neo-tree.nvim to 3.6.
 - Have neo-tree show hidden files as default.
 - Added vim-gitgutter.
 - Added Vim Tmux Navigator plugin.
