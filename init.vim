@@ -110,6 +110,7 @@ require("neo-tree").setup({
      ["<space>"] = "none"
     }
   },
+  open_files_do_not_replace_types = { "terminal", "trouble", "qf", "quickfix" }, -- when opening files, do not use windows containing these filetypes or buftypes
   default_component_configs = {
     icon = {
       folder_closed = "📁",

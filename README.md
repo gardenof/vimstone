@@ -5,6 +5,7 @@
 - It will be force-pushed over.
 
 ## Changes
+- Stops neo-tree from opening a file into a term buffer.
 - Update nvim-neo-tree/neo-tree.nvim to 3.6.
 - Have neo-tree show hidden files as default.
 - Added vim-gitgutter.
