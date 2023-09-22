@@ -13,15 +13,35 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v3.x', 'tag': '3.6' }
-
-" BEGIN neo-tree dependencies
 "
+" *** *** *** *** GardenOf Changes *** *** *** ***
+"
+
+" Tag my edits with #GardenOfEdit
+
+" # nvim-neo-tree/neo-tree
+"   - updated to 3.6 from 2.4
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v3.x', 'tag': '3.6' }
+" ## dependencie nvim-neo-tree/neo-tree
 Plug 'MunifTanjim/nui.nvim', { 'commit': '698e758' }
 Plug 's1n7ax/nvim-window-picker', { 'commit': 'v1.5' }
+"" Plug 'nvim-lua/plenary.nvim', { 'commit': '986ad71' }
+" ## nvim-lua/plenary added below with Telescope dependencies
 
-" also plenary, which is installed below in telescope dependencies
-" END
+" # fatih/vim-go
+"   - Comment out the Go-Lang langue server.
+"   - I could never make it work.
+"   - Left in so I can rember what we had, will remove later.
+" Plug 'fatih/vim-go', { 'commit': '7ec0a19' }
+
+" # christoomey/vim-tmux-navigator
+"   - Allowing you to move seamlessly between
+"   - Vim panes and tmux splits with vim commands.
+Plug 'christoomey/vim-tmux-navigator', { 'comit': 'cdd66d6' }
+
+"
+" *** *** *** ^GardenOf Changes Above^ *** *** ***
+"
 
 Plug 'neomake/neomake', { 'commit': '0556893' }
 
@@ -32,9 +52,6 @@ Plug 'flazz/vim-colorschemes', { 'commit': 'fd8f122' }
 Plug 'neovimhaskell/haskell-vim', { 'commit': 'f35d022' }
 
 Plug 'purescript-contrib/purescript-vim', { 'commit': 'af5fae0' }
-
-" Comment out the Go-Lang langue server. I could never make it work.
-" Plug 'fatih/vim-go', { 'commit': '7ec0a19' }
 
 Plug 'ElmCast/elm-vim', { 'commit': '4b71fac' }
 
@@ -52,7 +69,7 @@ Plug 'gcmt/taboo.vim', { 'commit': 'caf9481' }
 
 Plug 'nicwest/vim-http', { 'commit': 'e642fb9' }
 
-Plug 'liuchengxu/vim-which-key', { 'commit': '654dfc1' }
+Plug 'liuchengxu/vim-which-key', { 'commit': '654dfc1' } " -- I wounder if the looks cahnges
 
 Plug 'dag/vim-fish', { 'commit': '50b95cb' }
 
@@ -71,18 +88,20 @@ Plug 'nvim-telescope/telescope.nvim', { 'commit': 'b5833a6' }
 
 Plug 'nvim-telescope/telescope-file-browser.nvim', { 'commit': 'c30fcb6' }
 
+" -- A completion engine plugin for neovim written in Lua.
+"  Completion sources are installed from external repositories and sourced.
 Plug 'hrsh7th/cmp-nvim-lsp', { 'commit': 'affe808' }
 Plug 'hrsh7th/cmp-buffer', { 'commit': '62fc67a' }
 Plug 'hrsh7th/cmp-path', { 'commit': '447c87c' }
 Plug 'hrsh7th/cmp-cmdline', { 'commit': 'c36ca4b' }
 Plug 'hrsh7th/nvim-cmp', { 'commit': '89df2cb' }
 
+" -- A text searching plugin mimics Ctrl-Shift-F on Sublime Text 2
 Plug 'dyng/ctrlsf.vim', { 'commit': '9eb13ad' }
 
+" -- The undo history visualizer for VIM
 Plug 'mbbill/undotree', { 'commit': 'bfc9b06' }
 
-" Allowing you to move seamlessly between Vim panes and tmux splits.
-Plug 'christoomey/vim-tmux-navigator', { 'comit': 'cdd66d6' }
 
 call plug#end()
 
@@ -110,7 +129,11 @@ require("neo-tree").setup({
      ["<space>"] = "none"
     }
   },
-  open_files_do_not_replace_types = { "terminal", "trouble", "qf", "quickfix" }, -- when opening files, do not use windows containing these filetypes or buftypes
+  -- #GardenOfEdit
+  -- # to open_files_do_not_replace_types
+  --   - When opening files from neo-tree, do not use windows
+  --   - containing these filetypes or buftypes
+  open_files_do_not_replace_types = { "terminal", "trouble", "qf", "quickfix" },
   default_component_configs = {
     icon = {
       folder_closed = "📁",
@@ -142,6 +165,9 @@ require("neo-tree").setup({
     }
   },
   filesystem = {
+    -- #GardenOfEdit
+    -- Have neo-tree show hidden files as default
+    -- hide_dotfiles, hide_gitignored
     filtered_items = {
       hide_dotfiles = false,
       hide_gitignored = false,
@@ -693,5 +719,7 @@ augroup Git
   au FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 augroup END
 
+" #GardenOfEdit
+" airblade/vim-gitgutter uses these settings.
 set signcolumn=yes
 set updatetime=100
