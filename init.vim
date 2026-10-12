@@ -73,7 +73,7 @@ Plug 'dag/vim-fish', { 'commit': '50b95cb' }
 
 Plug 'godlygeek/tabular', { 'commit': '12437cd' }
 
-Plug 'neovim/nvim-lspconfig', { 'commit': 'fb733ac7' }
+Plug 'neovim/nvim-lspconfig', { 'tag': 'v2.12.0' }
 
 Plug 'hashivim/vim-terraform', { 'commit': '24de93a' }
 
@@ -243,29 +243,34 @@ EOF
 " BEGIN lsp related config
 
 lua <<EOF
-  -- Setup lspconfig.
+  -- Setup the Haskell language server (HLS) through Neovim's built-in LSP
+  -- config. nvim-lspconfig supplies the defaults (filetypes, root detection,
+  -- formatter settings); everything below is merged on top of them.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-  -- Apply any HLS config settings that should be adjusted based on
-  -- the project directory it is being launched in
-  function customizeHLSForProject (config, rootDir)
-    -- If there is a local language server script, use it rather than the
-    -- default one from the PATH
-    local localHLSPath = rootDir .. "/.vim/haskell-language-server-wrapper"
-    if vim.fn.executable(localHLSPath) == 1 then
-      config.cmd = { localHLSPath, "--lsp" }
-    end
+  vim.lsp.config('hls', {
+    -- If the project has a local language server script, use it rather than
+    -- the default one from the PATH. A function so it sees the project root.
+    cmd = function(dispatchers, config)
+      local cmd = { "haskell-language-server-wrapper", "--lsp" }
+      local localHLSPath = (config.root_dir or "") .. "/.vim/haskell-language-server-wrapper"
+      if vim.fn.executable(localHLSPath) == 1 then
+        cmd = { localHLSPath, "--lsp" }
+      end
+      return vim.lsp.rpc.start(cmd, dispatchers, { cwd = config.cmd_cwd, env = config.cmd_env })
+    end,
 
-    -- if the project is configured for fourmolu formatting, indicate as
-    -- such to HLS
-    if vim.fn.filereadable(rootDir .. "/fourmolu.yaml") == 1 then
-      config.settings.haskell.formattingProvider = "fourmolu"
-    end
-  end
+    -- Apply any HLS config settings that should be adjusted based on the
+    -- project directory it is being launched in: if the project is configured
+    -- for fourmolu formatting, indicate as such to HLS.
+    before_init = function(_, config)
+      if vim.fn.filereadable((config.root_dir or "") .. "/fourmolu.yaml") == 1 then
+        config.settings = vim.tbl_deep_extend("force", config.settings or {}, {
+          haskell = { formattingProvider = "fourmolu" },
+        })
+      end
+    end,
 
-  require('lspconfig')['hls'].setup {
-    on_new_config = customizeHLSForProject,
-    cmd = { "haskell-language-server-wrapper", "--lsp" },
     flags = { debounce_text_changes = 500, },
     settings = {
       haskell = {
@@ -280,7 +285,8 @@ lua <<EOF
       }
     },
     capabilities = capabilities,
-  }
+  })
+  vim.lsp.enable('hls')
 
   -- vim.lsp.with() was removed in Neovim 0.12; vim.diagnostic.config is the
   -- replacement (available since 0.6).
