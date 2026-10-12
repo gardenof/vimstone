@@ -94,7 +94,7 @@ Plug 'hrsh7th/cmp-cmdline', { 'commit': 'd126061' }
 Plug 'hrsh7th/nvim-cmp', { 'commit': '2ffe79f' }
 
 " -- A text searching plugin mimics Ctrl-Shift-F on Sublime Text 2
-Plug 'dyng/ctrlsf.vim', { 'commit': '50186c5' }
+Plug 'dyng/ctrlsf.vim', { 'commit': '39db9af' }
 
 " -- The undo history visualizer for VIM
 Plug 'mbbill/undotree', { 'commit': '6fa6b57' }
