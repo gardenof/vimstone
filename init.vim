@@ -285,13 +285,13 @@ lua <<EOF
     capabilities = capabilities,
   }
 
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-      virtual_text = false,
-      underline = true,
-      signs = true,
-    }
-  )
+  -- vim.lsp.with() was removed in Neovim 0.12; vim.diagnostic.config is the
+  -- replacement (available since 0.6).
+  vim.diagnostic.config({
+    virtual_text = false,
+    underline = true,
+    signs = true,
+  })
 
   -- Uncomment this if you prefer to turn off lsp logging altogether
   --vim.lsp.set_log_level("off")
