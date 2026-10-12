@@ -614,6 +614,16 @@ set mouse=a
 set undofile
 set undodir=~/.config/nvim/undodir-0.5.0
 
+" #GardenOfEdit
+" Persistent undo, swap and backup files store the full text of every file
+" edited. Do not write them for files that hold secrets (env files, cloud
+" credentials, token dumps, keys), so that text never lands in these directories.
+augroup NoTracesForSecrets
+  autocmd!
+  autocmd BufNewFile,BufReadPre .env,.env.*,*.env,*.env.* setlocal noundofile noswapfile nobackup nowritebackup
+  autocmd BufNewFile,BufReadPre credentials,*_auths_*.json,*-auth-*.json,*.pem,*.key,*.tfvars,id_rsa* setlocal noundofile noswapfile nobackup nowritebackup
+augroup END
+
 " Store backups in a different directory to avoid spamming filesystem
 " events inside projects
 set backupdir=~/.config/nvim/backup
