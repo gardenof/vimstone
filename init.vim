@@ -21,7 +21,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " # nvim-neo-tree/neo-tree
 "   - updated to 3.42.0 (was 3.36, 2.4 before)
-Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v3.x', 'tag': '3.42.0' }
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'tag': '3.42.0' }
 " ## dependencie nvim-neo-tree/neo-tree
 Plug 'MunifTanjim/nui.nvim', { 'commit': 'f535005' }
 Plug 's1n7ax/nvim-window-picker', { 'tag': 'v2.4.0' }
