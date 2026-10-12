@@ -37,7 +37,7 @@ Plug 's1n7ax/nvim-window-picker', { 'commit': 'v2.4.0' }
 " # christoomey/vim-tmux-navigator
 "   - Allowing you to move seamlessly between
 "   - Vim panes and tmux splits with vim commands.
-Plug 'christoomey/vim-tmux-navigator', { 'comit': 'cdd66d6' }
+Plug 'christoomey/vim-tmux-navigator', { 'commit': 'e41c431' }
 
 "
 " *** *** *** ^GardenOf Changes Above^ *** *** ***
