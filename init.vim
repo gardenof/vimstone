@@ -75,7 +75,7 @@ Plug 'godlygeek/tabular', { 'commit': '12437cd' }
 
 Plug 'neovim/nvim-lspconfig', { 'tag': 'v2.12.0' }
 
-Plug 'hashivim/vim-terraform', { 'commit': '24de93a' }
+Plug 'hashivim/vim-terraform', { 'commit': '520498f' }
 
 " BEGIN telescope dependencies
 Plug 'nvim-lua/plenary.nvim', { 'commit': '74b06c6' } " also a neo-tree-dependencies
