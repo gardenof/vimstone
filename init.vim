@@ -81,20 +81,20 @@ Plug 'hashivim/vim-terraform', { 'commit': '24de93a' }
 
 " BEGIN telescope dependencies
 Plug 'nvim-lua/popup.nvim', { 'commit': 'b7404d3' }
-Plug 'nvim-lua/plenary.nvim', { 'commit': '857c5ac' } " also a neo-tree-dependencies
+Plug 'nvim-lua/plenary.nvim', { 'commit': '74b06c6' } " also a neo-tree-dependencies
 " END telescope dependencies
 
-Plug 'nvim-telescope/telescope.nvim', { 'commit': '5255aa2' }
+Plug 'nvim-telescope/telescope.nvim', { 'commit': '40aedd8' }
 
-Plug 'nvim-telescope/telescope-file-browser.nvim', { 'commit': '626998e' }
+Plug 'nvim-telescope/telescope-file-browser.nvim', { 'commit': '3610dc7' }
 
 " -- A completion engine plugin for neovim written in Lua.
 "  Completion sources are installed from external repositories and sourced.
-Plug 'hrsh7th/cmp-nvim-lsp', { 'commit': '5af77f5' }
-Plug 'hrsh7th/cmp-buffer', { 'commit': '3022dbc' }
-Plug 'hrsh7th/cmp-path', { 'commit': '91ff86c' }
-Plug 'hrsh7th/cmp-cmdline', { 'commit': '8ee981b' }
-Plug 'hrsh7th/nvim-cmp', { 'commit': '5a11682' }
+Plug 'hrsh7th/cmp-nvim-lsp', { 'commit': 'cbc7b02' }
+Plug 'hrsh7th/cmp-buffer', { 'commit': 'b74fab3' }
+Plug 'hrsh7th/cmp-path', { 'commit': 'c642487' }
+Plug 'hrsh7th/cmp-cmdline', { 'commit': 'd126061' }
+Plug 'hrsh7th/nvim-cmp', { 'commit': '2ffe79f' }
 
 " -- A text searching plugin mimics Ctrl-Shift-F on Sublime Text 2
 Plug 'dyng/ctrlsf.vim', { 'commit': '50186c5' }
