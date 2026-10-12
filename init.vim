@@ -80,7 +80,6 @@ Plug 'neovim/nvim-lspconfig', { 'commit': 'fb733ac7' }
 Plug 'hashivim/vim-terraform', { 'commit': '24de93a' }
 
 " BEGIN telescope dependencies
-Plug 'nvim-lua/popup.nvim', { 'commit': 'b7404d3' }
 Plug 'nvim-lua/plenary.nvim', { 'commit': '74b06c6' } " also a neo-tree-dependencies
 " END telescope dependencies
 
