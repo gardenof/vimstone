@@ -20,10 +20,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Tag my edits with #GardenOfEdit
 
 " # nvim-neo-tree/neo-tree
-"   - updated to 3.36 from 2.4
-Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v3.x', 'tag': '3.36' }
+"   - updated to 3.42.0 (was 3.36, 2.4 before)
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v3.x', 'tag': '3.42.0' }
 " ## dependencie nvim-neo-tree/neo-tree
-Plug 'MunifTanjim/nui.nvim', { 'commit': 'de74099' }
+Plug 'MunifTanjim/nui.nvim', { 'commit': 'f535005' }
 Plug 's1n7ax/nvim-window-picker', { 'tag': 'v2.4.0' }
 "" Plug 'nvim-lua/plenary.nvim', { 'commit': '986ad71' }
 " ## nvim-lua/plenary added below with Telescope dependencies
