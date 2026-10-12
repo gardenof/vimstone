@@ -511,7 +511,7 @@ function! init#code_action()
 endfunction
 
 function! init#code_format()
-  :lua vim.lsp.buf.formatting()
+  :lua vim.lsp.buf.format()
 endfunction
 
 function! init#go_to_definition()
