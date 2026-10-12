@@ -43,8 +43,6 @@ Plug 'christoomey/vim-tmux-navigator', { 'commit': 'e41c431' }
 " *** *** *** ^GardenOf Changes Above^ *** *** ***
 "
 
-Plug 'neomake/neomake', { 'commit': '584f882' }
-
 Plug 'mileszs/ack.vim', { 'commit': '36e40f9' }
 
 Plug 'flazz/vim-colorschemes', { 'commit': 'fd8f122' }
